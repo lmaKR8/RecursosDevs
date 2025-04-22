@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="https://api.iconify.design/material-symbols:home-repair-service.svg?color=white"/>
+    <title>Recursos del Señor</title>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">
+            Oohh <span class="header__highlight">ShuShaaa</span>
+        </h1>
+        <p class="header__subtitle">
+            Herramientas para el diseño y desarrollo de mentiras varias
+        </p>
+    </header>
+
+    <main class="main">
+        <!-- BUSCADOR -->
+        <section class="search" aria-label="Buscar recursos">
+            <label for="search-input" class="visually-hidden">Buscar recurso</label>
+            <input type="search" id="search-input" class="search__input" placeholder=" ♥  Aquí puedes buscar recursos mi rey  ♥"
+                aria-describedby="search-help" />
+            <small id="search-help" class="search__help visually-hidden">
+                Escribe texto para filtrar recursos por nombre, descripción o etiqueta.
+            </small>
+        </section>
+
+        <!-- FILTROS -->
+        <nav class="filters" aria-label="Filtros de categoría">
+            <ul class="filters__list">
+                <li>
+                    <button type="button" class="filters__button filters__button--active" data-filter="all"
+                        aria-pressed="true">
+                        Todos
+                    </button>
+                </li>
+                <li><button type="button" class="filters__button" data-filter="proyectos">Proyectos</button></li>
+                <li><button type="button" class="filters__button" data-filter="html">HTML</button></li>
+                <li><button type="button" class="filters__button" data-filter="css">CSS</button></li>
+                <li><button type="button" class="filters__button" data-filter="react-js">React/JS</button></li>
+                <li><button type="button" class="filters__button" data-filter="componentes">Componentes</button></li>
+                <li><button type="button" class="filters__button" data-filter="diseño-figma">Diseño/Figma</button></li>
+                <li><button type="button" class="filters__button" data-filter="ui-ux">UI/UX</button></li>
+                <li><button type="button" class="filters__button" data-filter="iconos-fuentes">Iconos/Fuentes</button></li>
+                <li><button type="button" class="filters__button" data-filter="testing">Testing</button></li>
+                <li><button type="button" class="filters__button" data-filter="otros">Otros</button></li>
+            </ul>
+        </nav>
+
+        <!-- LISTA DE RECURSOS -->
+        <section class="resources" aria-live="polite">
+            <article class="card" data-tags="proyectos">
+                <a href="https://lmakr8.github.io/lmaKR8-KabTest/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Kab Portfolio</h2>
+                    <p class="card__description">
+                        Portafolio del shoro Kab
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Proyectos</span>
+                        <span class="tag">Bobby Generic</span>
+                        <span class="tag">Gay</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="componentes react-js">
+                <a href="https://codepen.io/trending" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Codepen</h2>
+                    <p class="card__description">
+                        Varios recursos para el desarrollo de componentes
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Componentes</span>
+                        <span class="tag">React</span>
+                        <span class="tag">JS</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="iconos-fuentes">
+                <a href="https://fontawesome.com/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Font Awesome</h2>
+                    <p class="card__description">
+                        Librería de iconos vectoriales y fuentes de iconos
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Iconos</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="iconos-fuentes">
+                <a href="https://fonts.google.com/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Google Fonts</h2>
+                    <p class="card__description">
+                        Biblioteca de fuentes de Google
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Fuentes</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="html">
+                <a href="https://madebymike.github.io/html5-periodic-table/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">HTML elements</h2>
+                    <p class="card__description">
+                        Tabla periódica de elementos HTML5
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Html</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="ui-ux">
+                <a href="https://uiverse.io/" class="card__link" target="_blank"
+                    rel="noopener noreferrer">
+                    <h2 class="card__title">UIverse</h2>
+                    <p class="card__description">
+                        Colección de componentes UI
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">UI</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="css">
+                <a href="https://xsgames.co/animatiss/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">AnimatiSS</h2>
+                    <p class="card__description">
+                        Generador de animaciones CSS
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">CSS</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="react-js">
+                <a href="https://react.useanimations.com/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">React micro-animations</h2>
+                    <p class="card__description">
+                        Librería de micro-animaciones para React
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">React</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="ui-ux">
+                <a href="https://dummyimage.com/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Dynamic Img Generator</h2>
+                    <p class="card__description">
+                        Generador de imágenes de marcador de posición
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">UI</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="testing">
+                <a href="https://validator.w3.org/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Markup Validation</h2>
+                    <p class="card__description">
+                        Servicio de validación de marcado HTML
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Testing</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="testing">
+                <a href="https://caniuse.com/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Can I use</h2>
+                    <p class="card__description">
+                        Validación de compatibilidad de navegadores
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Testing</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="iconos-fuentes">
+                <a href="https://svgl.app/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Svgl</h2>
+                    <p class="card__description">
+                        Generador de iconos SVG
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Iconos</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="css">
+                <a href="https://cssgrid-generator.netlify.app/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Grid Generator</h2>
+                    <p class="card__description">
+                        Generador de CSS Grid
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Css</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="html">
+                <a href="https://htmlreference.io/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Html Reference</h2>
+                    <p class="card__description">
+                        Referencia de etiquetas HTML
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Html</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card" data-tags="css">
+                <a href="https://animista.net/" class="card__link" target="_blank" rel="noopener noreferrer">
+                    <h2 class="card__title">Animista</h2>
+                    <p class="card__description">
+                        Generador de animaciones CSS personalizadas
+                    </p>
+                    <div class="card__tags">
+                        <span class="tag">Css</span>
+                    </div>
+                </a>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">
+            Recolectado por <a href="https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters:format(jpg)/https://specials-images.forbesimg.com/imageserve/5fbe8ffbcfbc22fc8a7fc9df/0x0.jpg" class="footer__link">d10s</a>
+        </p>
+        <p class="footer__text">© 2025 KR.8</p>
+    </footer>
+</body>
+
+</html>
