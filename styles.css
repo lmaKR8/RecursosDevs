@@ -83,6 +83,10 @@ body {
     background-color: var(--color-bg);
 }
 
+.search__input::placeholder {
+    text-align: center;
+}
+
 /* FILTERS */
 .filters {
     width: 100%;
