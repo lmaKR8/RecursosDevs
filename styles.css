@@ -1,86 +1,92 @@
 /* Variables, Reset & Global */
 :root {
-    --color-bg: #0e0e11;
-    --color-card: #2b2b2c;
-    --color-text: #f3f3f3;
-    --color-accent: #6d0380;
-    --color-accent2: #c913e9;
-    --color-muted: #a1a1aa;
-    --color-tag: #2f115d;
-    --border-radius: 1.5rem;
+    --color-bg: #0e0e11;      /* Color de fondo principal - casi negro */
+    --color-card: #2b2b2c;    /* Color de fondo para las tarjetas - gris oscuro */
+    --color-card2: #1b171f;    /* Color de fondo para las tarjetas - gris oscuro */
+    --color-text: #f3f3f3;    /* Color del texto principal - casi blanco */
+    --color-accent: #6d0380;  /* Color de acento primario - morado */
+    --color-accent2: #c913e9; /* Color de acento secundario - rosa/morado */
+    --color-muted: #a1a1aa;   /* Color para textos secundarios - gris claro */
+    --color-tag: #2f115d;     /* Color de fondo para etiquetas - morado oscuro */
+    --border-radius: 1.5rem;  /* Radio de borde común para elementos redondeados */
 }
 
+/* Reset CSS básico - asegura que el modelo de caja sea consistente */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto total */
 }
 
+/* Estilos base del body */
 body {
-    margin: 0;
-    padding: 1rem;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    line-height: 1.6;
+    margin: 0;                           /* Elimina márgenes predeterminados */
+    padding: 1rem;                       /* Añade espacio interno de 1rem */
+    font-family: 'Segoe UI', sans-serif; /* Define la tipografía principal */
+    background-color: var(--color-bg);   /* Aplica el color de fondo usando variable CSS */
+    color: var(--color-text);           /* Define el color de texto usando variable CSS */
+    line-height: 1.6;                   /* Define el espaciado entre líneas para mejor legibilidad */
 }
 
+/* Clase de utilidad para ocultar elementos visualmente pero mantenerlos accesibles */
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    position: absolute;  /* Saca el elemento del flujo normal */
+    width: 1px;         /* Dimensiones mínimas */
+    height: 1px;        /* Dimensiones mínimas */
+    margin: -1px;       /* Margin negativo para asegurar que no ocupe espacio */
+    overflow: hidden;   /* Oculta cualquier contenido que sobresalga */
+    clip: rect(0,0,0,0);/* Recorta el elemento */
+    border: 0;         /* Elimina bordes */
 }
 
 /* HEADER */
 .header {
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: center;     /* Centra todo el contenido del header */
+    margin-bottom: 2rem;    /* Espacio inferior */
 }
 
 .header__title {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2rem;                    /* Tamaño de fuente grande para el título */
+    font-weight: 700;                   /* Peso de fuente negrita */
 }
 
 .header__highlight {
-    background: linear-gradient(to right, #cc2ae9, #7b2ff7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
+    /* Crea un degradado de color para el texto */
+    background: linear-gradient(to right, #cc2ae9, #7b2ff7);  /* Degradado de morado a azul */
+    -webkit-background-clip: text;       /* Recorta el degradado al texto (para webkit) */
+    -webkit-text-fill-color: transparent;/* Hace el texto transparente para mostrar el degradado */
+    background-clip: text;               /* Recorta el degradado al texto (estándar) */
+    color: transparent;                  /* Hace el texto transparente (fallback) */
 }
 
 .header__subtitle {
-    font-size: 1rem;
-    color: var(--color-muted);
+    font-size: 1rem;                    /* Tamaño de fuente normal para el subtítulo */
+    color: var(--color-muted);          /* Color gris claro usando variable CSS */
 }
 
 /* SEARCH */
 .search {
-    width: 100%;
-    margin: 0 auto;
+    width: 100%;                        /* Ocupa todo el ancho disponible */
+    margin: 0 auto;                     /* Centra el elemento horizontalmente */
 }
 
 .search__input {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1rem;
-    text-align: center;
-    border-radius: var(--border-radius);
-    border: none;
-    background-color: var(--color-card);
-    color: var(--color-text);
-    margin-bottom: 1.5rem;
-    transition: all 0.3s ease;
+    width: 100%;                        /* Ocupa todo el ancho disponible */
+    padding: 0.75rem;                   /* Espacio interno */
+    font-size: 1rem;                    /* Tamaño de fuente normal */
+    text-align: center;                 /* Centra el texto dentro del input */
+    border-radius: var(--border-radius);/* Bordes redondeados usando variable CSS */
+    outline: 2px solid var(--color-accent); /* Borde de foco usando variable CSS */
+    background-color: var(--color-card2);/* Color de fondo usando variable CSS */
+    color: var(--color-text);          /* Color del texto usando variable CSS */
+    margin-bottom: 1.5rem;             /* Espacio inferior */
+    transition: all 0.3s ease;         /* Animación suave para todos los cambios */
 }
 
+/* Estado de foco del input de búsqueda */
 .search__input:focus {
-    outline: 2px solid var(--color-accent);
-    background-color: var(--color-bg);
+    outline: 2px solid var(--color-accent);  /* Borde de foco usando variable CSS */
+    background-color: var(--color-bg);       /* Cambia el color de fondo al enfocar */
 }
 
 .search__input::placeholder {
@@ -89,123 +95,134 @@ body {
 
 /* FILTERS */
 .filters {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 80rem;
-    margin: 0 auto 2rem;
+    width: 100%;                        /* Ocupa todo el ancho disponible */
+    max-width: 80rem;                   /* Ancho máximo para mantener legibilidad */
+    margin: 0 auto 2rem;                /* Centra y añade espacio inferior */
 }
 
 .filters__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
+    display: flex;                      /* Disposición flexible */
+    flex-wrap: wrap;                    /* Permite que los elementos se envuelvan */
+    gap: 0.5rem;                        /* Espacio entre elementos */
+    list-style: none;                   /* Elimina los puntos de la lista */
+    padding: 0;                         /* Elimina el padding predeterminado */
     margin-bottom: 2rem;
-    justify-content: center;
+    justify-content: center;            /* Centra los elementos horizontalmente */
 }
 
+/* Estilos para los botones de filtro */
 .filters__button {
-    background-color: var(--color-card);
-    color: var(--color-text);
-    border: 2px solid var(--color-card);;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    cursor: pointer;
+    background-color: var(--color-card);   /* Color de fondo usando variable CSS */
+    color: var(--color-text);              /* Color del texto usando variable CSS */
+    border: 2px solid var(--color-card);   /* Borde del mismo color que el fondo */
+    padding: 0.5rem 1rem;                  /* Espaciado interno: arriba/abajo izquierda/derecha */
+    border-radius: var(--border-radius);   /* Bordes redondeados */
+    cursor: pointer;                       /* Cambia el cursor a mano al pasar por encima */
 }
 
+/* Estado hover de los botones de filtro */
 .filters__button:hover {
-    border: 2px solid var(--color-accent);
-    color: var(--color-text);
+    border: 2px solid var(--color-accent); /* Cambia el color del borde al pasar el mouse */
+    color: var(--color-text);              /* Mantiene el color del texto */
 }
 
+/* Estado activo de los botones de filtro */
 .filters__button--active {
-    background-color: var(--color-accent);
-    color: var(--color-text);
-    border: 2px solid var(--color-accent);
+    background-color: var(--color-accent); /* Fondo morado para el botón activo */
+    color: var(--color-text);              /* Color del texto */
+    border: 2px solid var(--color-accent); /* Borde del mismo color que el fondo */
 }
 
 /* Mensaje de no resultados */
 .no-results {
-    color: var(--color-muted);
-    font-size: 1.1rem;
-    padding: 2rem;
-    background-color: var(--color-card);
-    border-radius: var(--border-radius);
-    margin: 1rem 0;
+    color: var(--color-muted);             /* Color de texto gris */
+    font-size: 1.1rem;                     /* Tamaño de fuente ligeramente mayor */
+    padding: 2rem;                         /* Espaciado interno */
+    background-color: var(--color-card);   /* Color de fondo usando variable CSS */
+    border-radius: var(--border-radius);   /* Bordes redondeados */
+    margin: 1rem 0;                        /* Margen vertical */
 }
 
 /* RESOURCES GRID */
 .resources {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-    margin: 2rem auto; /* Centrado y espaciado uniforme */
-    max-width: 1200px; /* Ancho máximo para mejor legibilidad */
+    display: grid;                         /* Activa el sistema de grid */
+    gap: 1rem;                            /* Espacio entre elementos del grid */
+    grid-template-columns: 1fr;           /* Una columna en móviles */
+    margin: 2rem auto;                    /* Centrado y espaciado uniforme */
+    max-width: 1200px;                    /* Ancho máximo para mejor legibilidad */
 }
 
-/* TARJETA */
+/* TARJETAS - Estilos para las cards de recursos */
 .card {
-    background-color: var(--color-card);
-    border-radius: var(--border-radius);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    padding: 0.5rem;
+    background-color: var(--color-card);    /* Color de fondo usando variable CSS */
+    border-radius: var(--border-radius);    /* Bordes redondeados uniformes */
+    /* Transición suave para efectos hover */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;  
+    padding: 0.5rem;                        /* Espaciado interno */
 }
 
+/* Efecto de elevación al pasar el mouse */
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(204, 42, 233, 0.2);
+    transform: translateY(-5px);            /* Mueve la tarjeta hacia arriba */
+    /* Sombra con color de acento semi-transparente */
+    box-shadow: 0 5px 15px rgba(204, 42, 233, 0.2);  
 }
 
+/* Enlaces dentro de las tarjetas */
 .card__link {
-    display: block;
-    padding: 1rem;
-    text-decoration: none;
-    color: inherit;
+    display: block;                         /* Hace que todo el área sea clickeable */
+    padding: 1rem;                         /* Espaciado interno */
+    text-decoration: none;                 /* Elimina el subrayado del enlace */
+    color: inherit;                        /* Hereda el color del texto padre */
 }
 
+/* Estado de foco para accesibilidad */
 .card__link:focus {
-    outline: 2px solid var(--color-accent);
-    outline-offset: -2px;
-    border-radius: var(--border-radius);
+    outline: 2px solid var(--color-accent); /* Borde visible al usar teclado */
+    outline-offset: -2px;                   /* Ajusta la posición del outline */
+    border-radius: var(--border-radius);    /* Bordes redondeados */
 }
 
+/* Títulos de las tarjetas */
 .card__title {
-    margin: 0 0 0.5rem;
-    font-size: 1.2rem;
+    margin: 0 0 0.5rem;                    /* Elimina margen superior */
+    font-size: 1.2rem;                     /* Tamaño de fuente */
 }
 
+/* Descripción de las tarjetas */
 .card__description {
-    margin: 0;
-    color: var(--color-muted);
-    font-size: 0.95rem;
+    margin: 0;                             /* Elimina márgenes */
+    color: var(--color-muted);             /* Color de texto secundario */
+    font-size: 0.95rem;                    /* Tamaño de fuente ligeramente menor */
 }
 
+/* Contenedor de etiquetas */
 .card__tags {
-    margin-top: 0.75rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    margin-top: 0.75rem;                   /* Espacio superior */
+    display: flex;                         /* Layout flexible */
+    flex-wrap: wrap;                       /* Permite que las etiquetas se envuelvan */
+    gap: 0.5rem;                          /* Espacio entre etiquetas */
 }
 
+/* Etiquetas individuales */
 .tag {
-    background-color: var(--color-tag);
-    border-radius: 999px;
-    padding: 0.3rem 1rem;
-    font-size: 0.8rem;
+    background-color: var(--color-tag);    /* Color de fondo usando variable CSS */
+    border-radius: 999px;                  /* Bordes completamente redondeados */
+    padding: 0.3rem 1rem;                  /* Espaciado interno */
+    font-size: 0.8rem;                     /* Tamaño de fuente pequeño */
 }
 
 /* FOOTER */
 .footer {
-    margin-top: 3rem;
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--color-muted);
+    margin-top: 3rem;                    /* Espacio superior grande */
+    text-align: center;                  /* Centra el contenido */
+    font-size: 0.9rem;                   /* Texto ligeramente más pequeño */
+    color: var(--color-muted);           /* Color de texto secundario */
 }
 
 .footer__link {
-    color: var(--color-accent2);
-    text-decoration: none;
+    color: var(--color-accent2);         /* Color de enlace usando variable CSS */
+    text-decoration: none;               /* Elimina el subrayado del enlace */
 }
 
 /* MEDIA QUERIES */
@@ -213,59 +230,64 @@ body {
 /* Medium (tablets) */
 @media (min-width: 600px) {
     .resources {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);  /* Cambia a 2 columnas */
     }
 }
 
 /* Large (desktop) */
 @media (min-width: 1024px) {
     body {
-        padding: 2rem 4rem;
+        padding: 2rem 4rem;              /* Más espacio en los bordes */
     }
 
     .resources {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);  /* Cambia a 3 columnas */
     }
 
+    /* Ajustes de tipografía para pantallas grandes */
     .header__title {
-        font-size: 4rem;
-        margin: 0;
+        font-size: 4rem;                 /* Título más grande */
+        margin: 0;                       /* Elimina márgenes */
     }
 
     .header__subtitle {
-        font-size: 1.25rem;
+        font-size: 1.25rem;              /* Subtítulo más grande */
     }
 
+    /* Ajustes de layout */
     .search {
-        max-width: 40rem;
-        margin: 0 auto 2rem;
+        max-width: 40rem;                /* Limita el ancho del buscador */
+        margin: 0 auto 2rem;             /* Centra y añade espacio inferior */
     }
 
     .filters {
-        max-width: 80rem;
-        margin: 0 auto 1rem 4rem;
+        max-width: 80rem;                /* Limita el ancho de los filtros */
+        margin: auto;        /* Ajusta márgenes */
     }
 
     .filters__list {
-        justify-content: center;
-        gap: 0.75rem;
+        justify-content: center;          /* Centra los filtros */
+        gap: 0.75rem;                    /* Más espacio entre filtros */
     }
 
+    /* Mejoras visuales para elementos interactivos */
     .filters__button {
-        font-size: 1rem;
-        padding: 0.6rem 1.2rem;
+        font-size: 1rem;                 /* Botones más grandes */
+        padding: 0.6rem 1.2rem;          /* Más espacio interno */
     }
 
+    /* Ajustes de la cuadrícula de recursos */
     .resources {
-        margin: 5rem;
-        gap: 2rem;
+        margin: 5rem;                    /* Más espacio alrededor */
+        gap: 2rem;                       /* Más espacio entre cards */
     }
 
+    /* Ajustes de tipografía en las cards */
     .card__title {
-        font-size: 1.4rem;
+        font-size: 1.4rem;               /* Títulos más grandes */
     }
 
     .footer__text {
-        font-size: 1.20rem;
+        font-size: 1.20rem;              /* Texto del footer más grande */
     }
 }
